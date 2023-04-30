@@ -87,14 +87,164 @@ wb["name"]="Warner Bros."
 wb.save
 
 #Movie
-
 begins= Movie.new
 begins["title"]="Batman Begins"
 begins["year_released"]= 2005
 begins["rated"]="PG-13"
 begins["studio_id"]=wb["id"]
+begins.save
 
+dark1=Movie.new
+dark1["title"]="The Dark Knight"
+dark1["year_released"]= 2008
+dark1["rated"]="PG-13"
+dark1["studio_id"]=wb["id"]
+dark1.save
 
+dark2=Movie.new
+dark2["title"]="The Dark Knight Rises"
+dark2["year_released"]= 2012
+dark2["rated"]="PG-13"
+dark2["studio_id"]=wb["id"]
+dark2.save
+
+#Batman Begins
+bale=Actor.new
+bale["name"]="Christian Bale"
+bale.save
+
+caine=Actor.new
+caine["name"]="Michael Caine"
+caine.save
+
+neeson=Actor.new
+neeson["name"]="Lian Neeson"
+neeson.save
+
+holmes=Actor.new
+holmes["name"]="Katie Holmes"
+holmes.save
+
+oldman=Actor.new
+oldman["name"]="Gary Oldman"
+oldman.save
+
+bruce=Role.new
+bruce["movie_id"]=begins["id"]
+bruce["actor_id"]=bale["id"]
+bruce["character_name"]="Bruce Wayne"
+bruce.save
+
+alfred=Role.new
+alfred["movie_id"]=begins["id"]
+alfred["actor_id"]=caine["id"]
+alfred["character_name"]="Alfred"
+alfred.save
+
+al_ghul=Role.new
+al_ghul["movie_id"]=begins["id"]
+al_ghul["actor_id"]=neeson["id"]
+al_ghul["character_name"]="Ra's Al Ghul"
+al_ghul.save
+
+rachel=Role.new
+rachel["movie_id"]=begins["id"]
+rachel["actor_id"]=holmes["id"]
+rachel["character_name"]="Rachel Dawes"
+rachel.save
+
+gordon=Role.new
+gordon["movie_id"]=begins["id"]
+gordon["actor_id"]=oldman["id"]
+gordon["character_name"]="Commissioner Gordon"
+gordon.save
+
+#Dark Knight
+ledger=Actor.new
+ledger["name"]="Heath Ledger"
+ledger.save
+
+eckhart=Actor.new
+eckhart["name"]="Aaron Eckhart"
+eckhart.save
+
+gyllenhaal =Actor.new
+gyllenhaal["name"]="Maggie Gyllenhaal"
+gyllenhaal.save
+
+bruce_dk1=Role.new
+bruce_dk1["movie_id"]=dark1["id"]
+bruce_dk1["actor_id"]=bale["id"]
+bruce_dk1["character_name"]="Bruce Wayne"
+bruce_dk1.save
+
+joker=Role.new
+joker["movie_id"]=dark1["id"]
+joker["actor_id"]=ledger["id"]
+joker["character_name"]="Joker"
+joker.save
+
+harvey=Role.new
+harvey["movie_id"]=dark1["id"]
+harvey["actor_id"]=eckhart["id"]
+harvey["character_name"]="Harvey Dent"
+harvey.save
+
+alfred_dk1=Role.new
+alfred_dk1["movie_id"]=dark1["id"]
+alfred_dk1["actor_id"]=caine["id"]
+alfred_dk1["character_name"]="Alfred"
+alfred_dk1.save
+
+rachel_dk1=Role.new
+rachel_dk1["movie_id"]=dark1["id"]
+rachel_dk1["actor_id"]=gyllenhaal["id"]
+jrachel_dk1["character_name"]="Rachel Dawes"
+rachel_dk1.save
+
+#Dark Knight Rises
+
+hardy=Actor.new
+hardy["name"]="Tom Hardy"
+hardy.save
+
+gordonlevitt=Actor.new
+gordonlevitt["name"]="Joseph Gordon-Levitt"
+gordonlevitt.save
+
+hathaway=Actor.new
+hathaway["name"]="Anne Hathaway"
+hathaway.save
+
+bruce_dk2=Role.new
+bruce_dk2["movie_id"]=dark2["id"]
+bruce_dk2["actor_id"]=bale["id"]
+bruce_dk2["character_name"]="Bruce Wayne"
+bruce_dk2.save
+
+gordon_dk2=Role.new
+gordon_dk2["movie_id"]=dark2["id"]
+gordon_dk2["actor_id"]=oldman["id"]
+gordon_dk2["character_name"]="Commissioner Gordon"
+gordon_dk2.save
+
+bane=Role.new
+bane["movie_id"]=dark2["id"]
+bane["actor_id"]=hardy["id"]
+bane["character_name"]="Bane"
+bane.save
+
+john=Role.new
+john["movie_id"]=dark2["id"]
+john["actor_id"]=gordonlevitt["id"]
+john["character_name"]="John Blake"
+john.save
+
+selina=Role.new
+selina["movie_id"]=dark2["id"]
+selina["actor_id"]=hathaway["id"]
+selina["character_name"]="Selina Kyle"
+selina.save
 
 
 # Prints a header for the movies output

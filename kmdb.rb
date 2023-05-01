@@ -199,7 +199,7 @@ alfred_dk1.save
 rachel_dk1=Role.new
 rachel_dk1["movie_id"]=dark1["id"]
 rachel_dk1["actor_id"]=gyllenhaal["id"]
-jrachel_dk1["character_name"]="Rachel Dawes"
+rachel_dk1["character_name"]="Rachel Dawes"
 rachel_dk1.save
 
 #Dark Knight Rises
@@ -253,7 +253,19 @@ puts "======"
 puts ""
 
 # Query the movies data and loop through the results to display the movies output.
-# TODO!
+
+
+# loop through movies
+for i in Movie.all
+    
+    title = i["title"]
+    year = i["year_released"]
+    rated = i["rated"]
+    studio = Studio.find(i["studio_id"])
+    studio_name = studio["name"]
+
+    puts "#{title}  #{year}  #{rated} #{studio_name}"
+end
 
 # Prints a header for the cast output
 puts ""
@@ -262,4 +274,16 @@ puts "========"
 puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
-# TODO!
+
+for j in Role.all
+
+  movie=Movie.find(j["movie_id"])
+  movie_name=movie["name"]
+  actor=Actor.find(j["actor_id"])
+  actor_name=actor["name"]
+  title=j["character_name"]
+
+  puts "#{movie_name}  #{actor_name}  #{title}"
+
+end
+

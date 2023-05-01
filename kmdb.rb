@@ -264,7 +264,7 @@ for i in Movie.all
     studio = Studio.find(i["studio_id"])
     studio_name = studio["name"]
 
-    puts "#{title}  #{year}  #{rated} #{studio_name}"
+    puts "#{title}   #{year}   #{rated}   #{studio_name}"
 end
 
 # Prints a header for the cast output
@@ -278,12 +278,12 @@ puts ""
 for j in Role.all
 
   movie=Movie.find(j["movie_id"])
-  movie_name=movie["name"]
+  movie_name=movie["title"]
   actor=Actor.find(j["actor_id"])
   actor_name=actor["name"]
-  title=j["character_name"]
+  character=j["character_name"]
 
-  puts "#{movie_name}  #{actor_name}  #{title}"
+  puts "#{movie_name}   #{actor_name}   #{character}"
 
 end
 

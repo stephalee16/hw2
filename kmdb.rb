@@ -261,7 +261,7 @@ for i in Movie.all
     title = i["title"]
     year = i["year_released"]
     rated = i["rated"]
-    studio = Studio.find(i["studio_id"])
+    studio= Studio.find_by("id" => i["studio_id"])
     studio_name = studio["name"]
 
     puts "#{title}   #{year}   #{rated}   #{studio_name}"
@@ -277,9 +277,9 @@ puts ""
 
 for j in Role.all
 
-  movie=Movie.find(j["movie_id"])
+  movie=Movie.find_by("id" =>j["movie_id"])
   movie_name=movie["title"]
-  actor=Actor.find(j["actor_id"])
+  actor=Actor.find_by("id"=>j["actor_id"])
   actor_name=actor["name"]
   character=j["character_name"]
 
